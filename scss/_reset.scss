@@ -1,0 +1,293 @@
+/*------------------------------------
+  Default Styles
+------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  @include respond(md) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: $g-font-primary;
+  @include fz($g-font-body-size);
+  line-height: 1.6;
+  color: $g-color-main;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga", "kern";
+  text-rendering: optimizelegibility;
+  background-color: $g-bg-color-main;
+}
+
+
+
+/*------------------------------------
+  Headings
+------------------------------------*/
+h1 {@include fz($g-font-body-size * 2.5);}
+h2 {@include fz($g-font-body-size * 2);}
+h3 {@include fz($g-font-body-size * 1.75);}
+h4 {@include fz($g-font-body-size * 1.5);}
+h5 {@include fz($g-font-body-size * 1.25);}
+h6, p {@include fz();}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+
+/*------------------------------------
+  Anchors
+------------------------------------*/
+
+a {
+	color: $g-color-primary;
+  text-decoration: none;
+}
+
+a:visited {
+	color: purple;
+}
+
+a:hover, a:focus, a:active {
+	color: $g-color-primary-dark-v2;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+/*------------------------------------
+  Elements
+------------------------------------*/
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6rem;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6rem;
+}
+
+code, kbd, tt, var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5rem;
+}
+
+ul, ol {
+	margin: 0 0 1.5rem 3rem;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5rem;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5rem 1.5rem;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1rem 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+	margin: 0 0 1.5rem;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	font-family: sans-serif;
+	@include fz();
+	line-height: 1.5;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: .6rem 1rem .4rem;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*------------------------------------
+  Highlight Color
+------------------------------------*/
+::-moz-selection {
+  color: $g-color-white;
+  background-color: $g-color-primary;
+}
+::selection {
+  color: $g-color-white;
+  background-color: $g-color-primary;
+}
+
+.g-bg-primary ::-moz-selection {
+  color: $g-color-primary;
+  background-color: $g-color-white;
+}
+.g-bg-primary ::selection {
+  color: $g-color-primary;
+  background-color: $g-color-white;
+}
